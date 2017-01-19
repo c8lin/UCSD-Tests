@@ -5,7 +5,7 @@
 import os
 import sys
 
-# Make command line calls to program ls
+# Make command line call to program ls
 print; sys.stdout.flush() 
 os.system("ls -lah")
 
