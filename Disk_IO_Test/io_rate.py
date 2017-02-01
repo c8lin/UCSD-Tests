@@ -6,7 +6,7 @@ n_GB = 15
 n_iters = 3
 
 print str(n_GB) + 'GB, ' + str(n_iters) + ' iterations.'
-#os.system('./disk-io.sh ' + str(n_GB) + ' ' +  str(n_iters))
+os.system('./disk-io.sh ' + str(n_GB) + ' ' +  str(n_iters))
 
 write = open('writes.time', 'r')
 read = open('reads.time', 'r')
