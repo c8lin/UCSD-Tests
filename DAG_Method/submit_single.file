@@ -1,0 +1,27 @@
+# http://research.cs.wisc.edu/htcondor/manual/v8.4/2_5Submitting_Job.html
+
+executable = frag-some.py
+
+error = frag_$(runnumber).error
+log = frag_$(runnumber).log
+output = frag_$(runnumber).out
+
+# Required input files: xrdfragcp,libXrdCl.so.2,libXrdXml.so.2,libXrdUtils.so.2,all-files-ge-128M.txt
+# These are placed in a directory called 'infiles' and specified with an absolute path, followed by
+# a forward slash '/' which copies the contents of 'infiles' to the execute directory.
+transfer_input_files = /home/ben/first_DAG/infiles/
+
+#use_x509userproxy = True
+#x509userproxy
+
+copy_to_spool = True
+request_memory = 200
+
+initialdir = /home/ben/first_DAG/2k_max_20MB
+
+#Added so jobs run at UCSD, for Caltech use Caltech and for both comma separated list
++DESIRED_Sites="UCSDSleep"
+
+###    args = ($sample,            $offset,    $id   , $count, $reqs)
+arguments   = all-files-ge-128M.txt   0    $(runnumber)   2     360
+queue 
