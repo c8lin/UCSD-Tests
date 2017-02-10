@@ -27,4 +27,5 @@ file.close()
 max_jobs = int(sys.argv[2]) # Get MAX_JOBS
 
 # Submit the DAG to the system to run
-os.system("condor_submit_dag -f -maxjobs " + str(max_jobs) + " " + dag_file) 
+os.system("condor_submit_dag -f -maxjobs " + str(max_jobs) \
+    + " -maxidle " + str(max_jobs) + " " + dag_file) 
