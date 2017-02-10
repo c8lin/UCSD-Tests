@@ -6,8 +6,8 @@ Run as follows:
 This will submit a DAG to HTCondor that can run at most MAX_JOBS concurrent
 jobs, and NUM_JOBS jobs will be scheduled. If NUM_JOBS is greater than
 MAX_JOBS, then MAX_JOBS jobs will be run and once any jobs are complete,
-additional jobs will be introduced until a total of NUM_JOBS jobs have
-scheduled.
+additional jobs will be introduced to bring it back up to MAX_JOBS, until a 
+total of NUM_JOBS jobs have run.
 '''
 
 import sys
